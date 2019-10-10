@@ -11,7 +11,8 @@ public class Observer : MonoBehaviour
     /**
     Player in Range of Gargoyle
      */
-    void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider other)
+    {
         if(other.transform == player){
             m_IsPlayerInRange = true; 
         }
@@ -20,13 +21,15 @@ public class Observer : MonoBehaviour
     /**
     Player out of range of Gargoyle.!-- 
     */
-    void OnTriggerExit(Collider other){
+    void OnTriggerExit(Collider other)
+    {
         if(other.transform == player) {
             m_IsPlayerInRange = false; 
         }
     }
 
-    void Update() {
+    void Update() 
+    {
         if(m_IsPlayerInRange){
             // shoot a raycast from the gargoyle to the direction of where it is looking. 
             Vector3 direction = player.position - transform.position + Vector3.up; 
